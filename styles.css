@@ -1,0 +1,156 @@
+:root {
+    --color-main-bg: #17162E;
+    --color-secondary-bg: #1D1C3B;
+
+    --color-main-text: #ffffff;
+    --color-secondary-text: #ACACAC;
+}
+
+/* HELPER */
+.searchBarOn {
+    outline: 2px solid white;
+    transition: all .3s ease-in-out;
+}
+
+.container {
+    max-width: 1224px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.meta-group {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: "Kumbh Sans", sans-serif;
+    background-color: var(--color-main-bg);
+}
+
+li {
+    list-style: none;
+}
+
+#cabecalho {
+    margin-top: 62px;
+
+}
+
+h1 {
+    text-align: center;
+    font-size: 36px;
+    line-height: 44.65px;
+    font-weight: 600;
+    color: var(--color-main-text);
+}
+
+form {
+    display: flex;
+    justify-content: space-between;
+    max-width: 634px;
+    margin: 48px auto 0 auto;
+
+    background-color: rgba(255, 255, 255, 0.208);
+
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+form #buscaFilmes {
+    padding: 24px;
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: var(--color-main-text);
+}
+
+#buscaFilmes:focus {
+    outline: none;
+}
+
+#buscaFilmes,#buscaFilmes::placeholder {
+    font-family: "Kumbh Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+#btnBusca {
+    background-color: transparent;
+    border: none;
+    padding: 24px;
+    cursor: pointer;
+
+    transition: all .3s ease-in-out;
+}
+
+#btnBusca:hover {
+    filter: brightness(1.5);
+}
+
+.inputGroup {
+    margin-top: 30px;
+
+    text-align: center;
+
+    color: var(--color-main-text);
+}
+
+.container__filmes {
+    margin-top: 64px;
+
+    display: grid;
+    gap: 48px;
+}
+
+.filme {
+    display: flex;
+    gap: 125px;
+
+    padding: 25px 40px;
+    border-radius: 4px;
+
+    background-color: var(--color-secondary-bg);
+}
+
+.filme-foto {
+    border-radius: 50%;
+}
+
+.filme-nome {
+    font-size: 18px;
+    color: white;
+    font-weight: 500;
+}
+
+.filme-meta {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+
+    color: white;
+}
+
+.filme-meta__icons {
+    margin-top: 25px;
+    display: flex;
+    gap: 45px;
+}
+
+.filme-descricao {
+    color: var(--color-secondary-text);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 177%;
+}
+

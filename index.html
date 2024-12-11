@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmes Populares</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header id="cabecalho">
+        <h1>
+            Filmes Populares
+        </h1>
+        <form action="#">
+            <input autocomplete="off" type="search" name="buscaFilme" id="buscaFilmes" placeholder="Digite algum filme para pesquisar...">
+            <button type="submit" id="btnBusca"><img src="assets/search-icon.svg" alt="search icon"></button>
+        </form>
+    </header>
+    
+    <main class="container">
+
+        <div class="inputGroup"> 
+            <input type="checkbox" name="apenasFavoritos" id="apenasFavoritos">
+            <label for="apenasFavoritos">Mostrar apenas meus filmes favoritos</label>
+        </div>
+
+        <ul class="container__filmes">
+            <li class="filme">
+                <div class="filme-meta">
+                    <img src="assets/image 3.png" alt="" class="filme-foto">
+                    <div class="">
+                        <h2 class="filme-nome">Batman (2022)</h2>
+                        <div class="filme-meta__icons">
+                            <div class="meta-group">
+                                <img src="assets/Star.png" alt="avaliação">
+                                <span class="filme-meta__nota">9.2</span>
+                            </div>
+                            <div class="meta-group">
+                                <img src="assets/Heart.png" alt="favoritar">
+                                <span class="filme-meta__favoritar">Favoritar</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="filme-descricao">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                </p>
+
+            </li>
+        </ul>
+
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
