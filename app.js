@@ -19,7 +19,8 @@ const fetchOptions = {
 };
 
 function inicializar(){
-    idsFilmesFavoritos = JSON.parse(localStorage.getItem("idsFilmesFavoritos"))
+    idsFilmesFavoritos = JSON.parse(localStorage.getItem("idsFilmesFavoritos"));
+    console.log(idsFilmesFavoritos);
     fetch(fetchUrlInicial, fetchOptions)
         .then(res => res.json())
         .then(res => renderiza(res.results))
@@ -79,6 +80,7 @@ function adicionaEventosAoFavoritar(){
             }
             // SALVA A NOVA LISTA DE IDS NO LOCALSTORAGE
             localStorage.setItem("idsFilmesFavoritos",JSON.stringify(idsFilmesFavoritos))
+            console.log(localStorage);
 
         })
     })
