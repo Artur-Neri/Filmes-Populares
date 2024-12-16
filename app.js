@@ -19,7 +19,7 @@ const fetchOptions = {
 };
 
 function inicializar(){
-    idsFilmesFavoritos = JSON.parse(localStorage.getItem("idsFilmesFavoritos"));
+    // idsFilmesFavoritos = JSON.parse(localStorage.getItem("idsFilmesFavoritos"));
     console.log(idsFilmesFavoritos);
     fetch(fetchUrlInicial, fetchOptions)
         .then(res => res.json())
@@ -79,8 +79,8 @@ function adicionaEventosAoFavoritar(){
                 e.target.src = "assets/Vector.png";
             }
             // SALVA A NOVA LISTA DE IDS NO LOCALSTORAGE
-            localStorage.setItem("idsFilmesFavoritos",JSON.stringify(idsFilmesFavoritos))
-            console.log(localStorage);
+            // localStorage.setItem("idsFilmesFavoritos",JSON.stringify(idsFilmesFavoritos))
+            // console.log(localStorage);
 
         })
     })
