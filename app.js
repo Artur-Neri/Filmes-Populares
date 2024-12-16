@@ -3,6 +3,7 @@ const txtInputBusca = document.querySelector('#buscaFilmes');
 const favoriteOnly = document.querySelector('#apenasFavoritos');
 const searchBar = document.querySelector('#buscaFilmes');
 const listaDeFilmes = document.querySelector('.container__filmes');
+const homePage = document.querySelector('#homePage');
 
 const fetchUrlInicial = 'https://api.themoviedb.org/3/movie/popular?language=pt-br&page=1';
 
@@ -19,6 +20,7 @@ const fetchOptions = {
 };
 
 function inicializar(){
+    favoriteOnly.checked = false
     // idsFilmesFavoritos = JSON.parse(localStorage.getItem("idsFilmesFavoritos"));
     console.log(idsFilmesFavoritos);
     fetch(fetchUrlInicial, fetchOptions)
@@ -189,3 +191,6 @@ favoriteOnly.addEventListener('click', function(){
         renderiza(ultimosMostrados);
     }
 })
+
+// CARREGA PAGINA INICIAL
+homePage.addEventListener('click', inicializar);
