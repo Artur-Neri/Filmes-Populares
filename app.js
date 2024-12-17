@@ -3,13 +3,22 @@ const txtInputBusca = document.querySelector('#buscaFilmes');
 const favoriteOnly = document.querySelector('#apenasFavoritos');
 const searchBar = document.querySelector('#buscaFilmes');
 const listaDeFilmes = document.querySelector('.container__filmes');
-const homePage = document.querySelector('#homePage');
+const pageButtons = document.querySelectorAll('#page-control button');
 
-const fetchUrlInicial = 'https://api.themoviedb.org/3/movie/popular?language=pt-br&page=1';
+const fetchUrlInicial = 'https://api.themoviedb.org/3/movie/popular?language=pt-br&page=';
 
 let idsFilmesFavoritos = [];
 let ultimosMostrados = [];
 let listaAtual = [];
+
+let paginaAtual = 1;
+
+pageButtons.forEach(page => {
+  page.addEventListener('click', function(){
+    paginaAtual = this.value;
+    inicializar();
+  })
+})
 
 const fetchOptions = {
     method: 'GET',
@@ -20,10 +29,8 @@ const fetchOptions = {
 };
 
 function inicializar(){
-    favoriteOnly.checked = false
-    // idsFilmesFavoritos = JSON.parse(localStorage.getItem("idsFilmesFavoritos"));
-    console.log(idsFilmesFavoritos);
-    fetch(fetchUrlInicial, fetchOptions)
+    idsFilmesFavoritos = JSON.parse(localStorage.getItem("idsFilmesFavoritos"));
+    fetch(fetchUrlInicial+paginaAtual, fetchOptions)
         .then(res => res.json())
         .then(res => renderiza(res.results))
         .catch(err => console.error(err));
@@ -81,8 +88,8 @@ function adicionaEventosAoFavoritar(){
                 e.target.src = "assets/Vector.png";
             }
             // SALVA A NOVA LISTA DE IDS NO LOCALSTORAGE
-            // localStorage.setItem("idsFilmesFavoritos",JSON.stringify(idsFilmesFavoritos))
-            // console.log(localStorage);
+            localStorage.setItem("idsFilmesFavoritos",JSON.stringify(idsFilmesFavoritos))
+            console.log(localStorage);
 
         })
     })
@@ -191,6 +198,3 @@ favoriteOnly.addEventListener('click', function(){
         renderiza(ultimosMostrados);
     }
 })
-
-// CARREGA PAGINA INICIAL
-homePage.addEventListener('click', inicializar);

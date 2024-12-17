@@ -210,3 +210,20 @@ form #buscaFilmes {
         flex-direction: column;
     }
 }
+
+#page-control {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+
+  margin-top: 20px;
+}
+
+#page-control button {
+  background: #ffffff;
+  border: none;
+  width: 24px;
+  height: 24px;
+
+  cursor: pointer;
+}
