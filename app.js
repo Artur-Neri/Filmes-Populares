@@ -29,7 +29,6 @@ const fetchOptions = {
 };
 
 function inicializar(){
-    idsFilmesFavoritos = JSON.parse(localStorage.getItem("idsFilmesFavoritos"));
     fetch(fetchUrlInicial+paginaAtual, fetchOptions)
         .then(res => res.json())
         .then(res => renderiza(res.results))
@@ -87,9 +86,6 @@ function adicionaEventosAoFavoritar(){
                 idsFilmesFavoritos.push(e.target.dataset.id);
                 e.target.src = "assets/Vector.png";
             }
-            // SALVA A NOVA LISTA DE IDS NO LOCALSTORAGE
-            localStorage.setItem("idsFilmesFavoritos",JSON.stringify(idsFilmesFavoritos))
-            console.log(localStorage);
 
         })
     })
